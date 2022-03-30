@@ -47,7 +47,7 @@ namespace Unit_3_Sac_1_Task_3
                     MessageBox.Show("No file selected");
                 }
             }
-            //if the file is open returneror
+            //if the file is open return error
             catch(System.IO.IOException)
             {
                 MessageBox.Show("File Cannot Be Open", "Error",
@@ -134,7 +134,7 @@ namespace Unit_3_Sac_1_Task_3
             }
 
             //if the user wants to sort asc then reverse the list
-            if (ASC)
+            if (!ASC)
             {
                 tempList.Reverse();
             }
@@ -157,6 +157,7 @@ namespace Unit_3_Sac_1_Task_3
         {
             if(cmbAsc.Text == "ASC")
             {
+                //can refactor code here to make it a var in the selection sort function if needed
                 ASC = true;
                 selectionSort(sales);
             }
@@ -189,12 +190,18 @@ namespace Unit_3_Sac_1_Task_3
                 }
                 if (filter == "Textbook")
                 {
-                    if (s.Textbook.ToLower().Contains(target.ToLower())) { results.Add(s); }
+                    if (s.Textbook.ToLower().Contains(target.ToLower())) 
+                    {
+                        results.Add(s); 
+                    }
                 }
 
                 if (filter == "Subject")
                 {
-                    if (s.Subject.ToLower().Contains(target.ToLower())) { results.Add(s); }
+                    if (s.Subject.ToLower().Contains(target.ToLower())) 
+                    { 
+                        results.Add(s);
+                    }
                 }
 
             }
